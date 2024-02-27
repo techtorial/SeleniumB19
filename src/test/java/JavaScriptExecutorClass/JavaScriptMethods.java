@@ -39,8 +39,9 @@ public class JavaScriptMethods {
         //1-First try WebElement.click() -->If no
         //2-Second try Actions.click() -->If no
         //3-Last try JavaScript.click()
-        JavascriptExecutor js= (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].click()",aboutUs);
+//        JavascriptExecutor js= (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].click()",aboutUs);
+        BrowserUtils.clickJS(driver,aboutUs);
     }
 
     @Test
@@ -50,17 +51,19 @@ public class JavaScriptMethods {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://www.techtorialacademy.com/");
         WebElement copyRight=driver.findElement(By.xpath("//div[contains(text(),'Copyright')]"));
-        JavascriptExecutor js= (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].scrollIntoView(true)",copyRight);
+//        JavascriptExecutor js= (JavascriptExecutor) driver;
+//        js.executeScript("arguments[0].scrollIntoView(true)",copyRight);
+        BrowserUtils.scrollIntoView(driver,copyRight);
         System.out.println(BrowserUtils.getText(copyRight));
         Thread.sleep(3000);
         WebElement launch=driver.findElement(By.xpath("//b[.='LAUNCH A NEW TECH CAREER']"));
-        js.executeScript("arguments[0].scrollIntoView(true)",launch);
+//        js.executeScript("arguments[0].scrollIntoView(true)",launch);
+        BrowserUtils.scrollIntoView(driver,launch);
         System.out.println(BrowserUtils.getText(launch));
         Thread.sleep(3000);
         WebElement middle=driver.findElement(By.xpath("//h2[contains(text(),'The best learning')]"));
-        js.executeScript("arguments[0].scrollIntoView(true)",middle);
-
+//        js.executeScript("arguments[0].scrollIntoView(true)",middle);
+        BrowserUtils.scrollIntoView(driver,middle);
 
     }
 
