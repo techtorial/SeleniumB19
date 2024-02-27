@@ -1,5 +1,7 @@
 package utils;
 
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -28,5 +30,19 @@ public class BrowserUtils {
             default:
                 Assert.fail("The method name is not matching with text,value or index");
         }
+    }
+
+    public static String getTitleJS(WebDriver driver){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        return js.executeScript("return document.title").toString().trim();
+    }
+    public static void clickJS(WebDriver driver,WebElement element){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click()",element);
+    }
+
+    public static void scrollIntoView(WebDriver driver,WebElement element){
+        JavascriptExecutor js= (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView(true)",element);
     }
 }
