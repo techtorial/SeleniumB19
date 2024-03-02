@@ -29,4 +29,53 @@ public class AlertIntro {
         WebElement message=driver.findElement(By.cssSelector("#result"));
         System.out.println(BrowserUtils.getText(message));
     }
+    @Test
+    public void Dismiss() throws InterruptedException {
+        ChromeDriver driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.navigate().to("https://the-internet.herokuapp.com/javascript_alerts");
+        WebElement jsConfirmButton=driver.findElement(By.xpath("//button[contains(@onclick,'jsConfirm')]"));
+        jsConfirmButton.click();
+        Thread.sleep(1000);
+        Alert alert=driver.switchTo().alert();
+        alert.dismiss();
+        WebElement result=driver.findElement(By.cssSelector("#result"));
+        String actualResult=BrowserUtils.getText(result);
+        String expectedResult="You clicked: Cancel";
+        Assert.assertEquals(actualResult,expectedResult);
+    }
+
+    @Test
+    public void sendKeys(){
+        ChromeDriver driver=new ChromeDriver();
+        driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.navigate().to("https://the-internet.herokuapp.com/javascript_alerts");
+        WebElement promptButton=driver.findElement(By.xpath("//button[contains(@onclick,'jsPrompt')]"));
+        promptButton.click();
+        Alert alert=driver.switchTo().alert();
+        System.out.println(alert.getText());
+        alert.sendKeys("I love Selenium");
+        alert.accept();
+        WebElement result=driver.findElement(By.cssSelector("#result"));
+        String actualResult=BrowserUtils.getText(result);
+        String expectedResult="You entered: I love Selenium";
+        Assert.assertEquals(actualResult,expectedResult);
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
