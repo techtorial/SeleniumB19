@@ -22,6 +22,9 @@ public class BankLoginPage {
     @FindBy(xpath = "//button[.='Home']")
     WebElement homeButton;
 
+    public void clickManagerLoginButton(){
+        managerLoginButton.click();
+    }
     public void loginPageInformation(WebDriver driver,String expectedHeader,String expectedTitle,String expectedUrl){
         Assert.assertEquals(BrowserUtils.getText(header),expectedHeader);
         Assert.assertTrue(customerLoginButton.isDisplayed() && customerLoginButton.isEnabled());
@@ -30,6 +33,7 @@ public class BankLoginPage {
         Assert.assertEquals(driver.getTitle(),expectedTitle);
         Assert.assertEquals(driver.getCurrentUrl(),expectedUrl);
     }
+
 
 
 }
