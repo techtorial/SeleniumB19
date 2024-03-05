@@ -36,6 +36,12 @@ public class BankManagerPage {
     WebElement currency;
     @FindBy(xpath = "//button[.='Process']")
     WebElement processButton;
+    @FindBy(xpath = "//button[contains(text(),'Customers')]")
+    WebElement customersButton;
+    @FindBy(tagName = "input")
+    WebElement searchBar;
+    @FindBy(xpath = "//td[@class='ng-binding']")
+    List<WebElement> allInformation;
 
     public void addCustomerInformation(WebDriver driver,String firstName,String lastName,String zipCode,
     String expectedMessage){
@@ -65,6 +71,16 @@ public class BankManagerPage {
         Alert alert=driver.switchTo().alert();
         Assert.assertTrue(alert.getText().contains(expectedMessage));
         alert.accept();
+    }
+
+    public void customerDataInformation(String searchName,String lastName,String zipCode){
+        customersButton.click();
+        searchBar.sendKeys(searchName);
+        List<String> expectedInformation=Arrays.asList(searchName,lastName,zipCode);
+
+        for(int i=0;i<allInformation.size();i++){
+            Assert.assertEquals(BrowserUtils.getText(allInformation.get(i)),expectedInformation.get(i));
+        }
     }
 
 
