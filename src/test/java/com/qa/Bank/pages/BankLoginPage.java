@@ -25,6 +25,13 @@ public class BankLoginPage {
     public void clickManagerLoginButton(){
         managerLoginButton.click();
     }
+
+    public void clickHomeButton(){
+        homeButton.click();
+    }
+    public void clickCustomerLoginButton(){
+        customerLoginButton.click();
+    }
     public void loginPageInformation(WebDriver driver,String expectedHeader,String expectedTitle,String expectedUrl){
         Assert.assertEquals(BrowserUtils.getText(header),expectedHeader);
         Assert.assertTrue(customerLoginButton.isDisplayed() && customerLoginButton.isEnabled());
