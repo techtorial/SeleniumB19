@@ -70,7 +70,6 @@ public class BankCustomerPage {
         int expectedBalance=Integer.parseInt(BrowserUtils.getText(balance));
         Thread.sleep(3000);
         transactionButton.click();
-        Thread.sleep(3000);
         int actualBalance=Integer.parseInt(BrowserUtils.getText(firstTransaction)) -
                           Integer.parseInt(BrowserUtils.getText(secondTransaction));
         Assert.assertEquals(actualBalance,expectedBalance);
