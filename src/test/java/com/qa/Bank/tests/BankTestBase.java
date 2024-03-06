@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import utils.ConfigReader;
 import utils.DriverHelper;
 
 import java.time.Duration;
@@ -18,7 +19,7 @@ public class BankTestBase {
 //        driver.manage().window().maximize();
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver= DriverHelper.getDriver();
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+        driver.get(ConfigReader.readProperty("bankurl"));
     }
 
     @AfterMethod

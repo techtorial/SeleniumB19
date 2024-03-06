@@ -20,9 +20,8 @@ public class DriverHelper {
 
     public static WebDriver getDriver(){
         if(driver==null || ((RemoteWebDriver)driver).getSessionId()==null){
-            String browser="chrome";
 
-            switch (browser){
+            switch (ConfigReader.readProperty("browser")){
 
                 case "chrome":
                     driver=new ChromeDriver();
