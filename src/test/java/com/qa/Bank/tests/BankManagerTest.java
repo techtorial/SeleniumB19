@@ -8,14 +8,14 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class BankManagerTest {
+public class BankManagerTest extends BankTestBase {
 
     @Test
     public void validateAddCustomerFunctionality(){
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+//        WebDriver driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         BankLoginPage bankLoginPage=new BankLoginPage(driver);
         bankLoginPage.clickManagerLoginButton();
         BankManagerPage bankManagerPage=new BankManagerPage(driver);
@@ -24,10 +24,10 @@ public class BankManagerTest {
     }
     @Test
     public void validateOpenAccountFunctionality(){
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+//        WebDriver driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         BankLoginPage bankLoginPage=new BankLoginPage(driver);
         bankLoginPage.clickManagerLoginButton();
         BankManagerPage bankManagerPage=new BankManagerPage(driver);
@@ -39,10 +39,10 @@ public class BankManagerTest {
 
     @Test
     public void validateCustomersFunctionality(){
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+//        WebDriver driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         BankLoginPage bankLoginPage=new BankLoginPage(driver);
         bankLoginPage.clickManagerLoginButton();
         BankManagerPage bankManagerPage=new BankManagerPage(driver);
