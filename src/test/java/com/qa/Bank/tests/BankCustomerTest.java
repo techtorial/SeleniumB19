@@ -9,14 +9,14 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class BankCustomerTest {
+public class BankCustomerTest extends BankTestBase {
 
     @Test
     public void validateCustomerTransactionFunctionality() throws InterruptedException {
-        WebDriver driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
+//        WebDriver driver=new ChromeDriver();
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
         BankLoginPage bankLoginPage=new BankLoginPage(driver);
         bankLoginPage.clickManagerLoginButton();
         BankManagerPage bankManagerPage=new BankManagerPage(driver);
@@ -33,6 +33,5 @@ public class BankCustomerTest {
         bankCustomerPage.depositProcess("500","Deposit Successful","rgba(255, 0, 0, 1)");
         bankCustomerPage.withdrawalProcess("300","Transaction successful","rgba(255, 0, 0, 1)");
         bankCustomerPage.transactionProcess();
-
     }
 }
