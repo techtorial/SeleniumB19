@@ -23,11 +23,12 @@ public class BlazeProductPage {
     @FindBy(xpath = "//a[.='Add to cart']")
     WebElement addToCardButton;
 
-    public void productInformation(WebDriver driver,String expectedHeader,String expectedPrice,String expectedMessage){
+    public void productInformation(WebDriver driver,String expectedHeader,String expectedPrice,String expectedMessage) throws InterruptedException {
         Assert.assertEquals(BrowserUtils.getText(header),expectedHeader);
         Assert.assertEquals(BrowserUtils.getText(price),expectedPrice);
         Assert.assertTrue(BrowserUtils.getText(description).contains(expectedHeader));
         addToCardButton.click();
+        Thread.sleep(1000);
         Alert alert=driver.switchTo().alert();
         Assert.assertEquals(alert.getText(),expectedMessage);
         alert.accept();

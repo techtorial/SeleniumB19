@@ -16,7 +16,8 @@ public class BlazeLaptopsPage {
     @FindBy(xpath = "//a[@class='hrefch']")
     List<WebElement> titleOfProducts;
 
-    public void chooseProduct(String expectedProduct){
+    public void chooseProduct(String expectedProduct) throws InterruptedException {
+        Thread.sleep(1000);
         for(WebElement product:titleOfProducts){
             if(BrowserUtils.getText(product).contains(expectedProduct)){
                 product.click();
