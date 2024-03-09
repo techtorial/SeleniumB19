@@ -16,7 +16,12 @@ public class BlazeMainPage {
 
     @FindBy(xpath = "//a[@id='itemc']")
     List<WebElement> allCategories;
+    @FindBy(css = "#cartur")
+    WebElement cartButton;
 
+    public void clickCartButton(){
+        cartButton.click();
+    }
     public void chooseCategory(String expectedCategory){
         for(WebElement category:allCategories){
             if(BrowserUtils.getText(category).contains(expectedCategory)){
