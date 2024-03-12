@@ -4,6 +4,9 @@
 
     <test name="Practice">
         <parameter name="firstname" value="Ahmet"> </parameter>
+        <parameter name="firstName" value="Mehmet"> </parameter>
+        <parameter name="lastName" value="Mahmut"> </parameter>
+        <parameter name="zipCode" value="60213"> </parameter>
         <classes>
             <class name="TestNGConcept.ParametersLogic"> </class>
         </classes>

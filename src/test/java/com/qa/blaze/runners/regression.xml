@@ -3,6 +3,12 @@
    <suite name="Regression Suite">
 
      <test name="Blaze">
+         <parameter name="message" value="Sign up successful."> </parameter>
+         <parameter name="chooseCategory" value="Laptops"> </parameter>
+         <parameter name="chooseProductAndHeader" value="MacBook Pro"> </parameter>
+         <parameter name="productPrice" value="$1100 *includes tax"></parameter>
+         <parameter name="AddToCartMessage" value="Product added"> </parameter>
+
          <classes>
              <class name="com.qa.blaze.tests.BlazeLoginTest"> </class>
              <class name="com.qa.blaze.tests.BlazeProductTest"> </class>
