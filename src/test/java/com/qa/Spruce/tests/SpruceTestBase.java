@@ -23,6 +23,6 @@ public class SpruceTestBase {
         if(!iTestResult.isSuccess()){
             BrowserUtils.getScreenShot(driver,"spruce");
         }
-        driver.quit();
+      //  driver.quit();
     }
 }

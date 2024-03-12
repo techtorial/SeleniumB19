@@ -23,11 +23,13 @@ public class SeaFoodPage {
     @FindBy(xpath = "//h4[@class='card__title']")
     WebElement productName;
 
-    public void searchFunctionality(WebDriver driver,String searchKey,String expectedName){
+    public void searchFunctionality(WebDriver driver,String searchKey,String expectedName) throws InterruptedException {
         BrowserUtils.scrollIntoView(driver,searchBar);
         searchBar.sendKeys(searchKey, Keys.ENTER);
         rating.click();
+        Thread.sleep(1000);
         editorChoice.click();
+        Thread.sleep(2000);
         Assert.assertEquals(BrowserUtils.getText(productName),expectedName);
     }
 

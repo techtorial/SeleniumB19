@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 public class SpruceFoodTest extends SpruceTestBase{
     @Parameters({"searchKey","expectedMessage"})
     @Test
-    public void validateSearchFunctionality(String searchKey,String expectedMessage){
+    public void validateSearchFunctionality(String searchKey,String expectedMessage) throws InterruptedException {
         SpruceMainPage spruceMainPage=new SpruceMainPage(driver);
         SeaFoodPage seaFoodPage=new SeaFoodPage(driver);
         spruceMainPage.chooseCategory(driver);
