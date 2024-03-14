@@ -5,6 +5,7 @@
     <test name="SauceLab">
         <classes>
             <class name="com.qa.SauceLab.tests.SauceLabLoginTest"> </class>
+            <class name="com.qa.SauceLab.tests.SauceLabInventoryTest"> </class>
         </classes>
     </test>
 </suite>

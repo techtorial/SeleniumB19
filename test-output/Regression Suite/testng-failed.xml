@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Regression Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Blaze(failed)">
-    <parameter name="message" value="Sign up successful."/>
+  <test thread-count="5" name="SauceLab(failed)">
     <classes>
-      <class name="com.qa.blaze.tests.BlazeLoginTest">
+      <class name="com.qa.SauceLab.tests.SauceLabLoginTest">
         <methods>
-          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="validateSignUpAndLoginFunctionalityParameters" invocation-numbers="0"/>
+          <include name="validateNegativeScenarios" invocation-numbers="3"/>
+          <include name="teardown"/>
         </methods>
-      </class> <!-- com.qa.blaze.tests.BlazeLoginTest -->
+      </class> <!-- com.qa.SauceLab.tests.SauceLabLoginTest -->
     </classes>
-  </test> <!-- Blaze(failed) -->
+  </test> <!-- SauceLab(failed) -->
 </suite> <!-- Failed suite [Regression Suite] -->

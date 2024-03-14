@@ -24,4 +24,16 @@ public class SauceLabData {
                 {"locked_out_user","secret_sauce","Epic sadface: Sorry, this user has been locked out."}
         };
     }
+
+    @DataProvider(name="productinformation")
+    public Object[][] getProductData(){
+     return new Object[][]{
+             {"Sauce Labs Backpack", "Sly Pack", "$29.99"},
+             {"Sauce Labs Bike Light", "3 lighting modes", "$9.99"},
+             {"Sauce Labs Bolt T-Shirt", "superhero on with ", "$15.99"},
+             {"Sauce Labs Fleece Jacket", "quarter-zip fleece jacket", "$49.99"},
+             {"Sauce Labs Onesie", "3-snap bottom", "$7.99"},
+             {"Test.allTheThings() T-Shirt (Red)", "when cozying", "$15.99"}
+     };
+    }
 }
