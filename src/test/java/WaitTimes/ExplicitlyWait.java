@@ -46,9 +46,10 @@ public class ExplicitlyWait {
         driver.get("https://the-internet.herokuapp.com/dynamic_loading/2");
         WebElement button=driver.findElement(By.xpath("//button"));
         button.click();
-        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+//        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
         WebElement message=driver.findElement(By.xpath("//h4[.='Hello World!']"));
-        message=wait.until(ExpectedConditions.visibilityOf(message));
+//        message=wait.until(ExpectedConditions.visibilityOf(message));
+        BrowserUtils.explicitlyWait(driver,message,"visibility");
         System.out.println(message);
         Assert.assertEquals(BrowserUtils.getText(message),"Hello World!");
     }
